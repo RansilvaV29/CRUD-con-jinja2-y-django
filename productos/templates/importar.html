@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} Importar Productos {% endblock %}
+
+{% block content %}
+<h1>Importar Productos</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Importar</button>
+    <a href="{% url 'listar_productos' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
